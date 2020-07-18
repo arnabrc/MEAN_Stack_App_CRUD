@@ -66,7 +66,7 @@ exports.employee_update = function (req, res, next) {
 
 // Delete employee
 exports.employee_delete = function (req, res, next) {
-    Employee.findOneAndRemove(req.params.id, (error, data) => {
+    Employee.findByIdAndRemove(req.params.id, (error, data) => {
         if (error) {
             return next(error);
         } else {
